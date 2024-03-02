@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Interface - SDBMS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="dark:bg-gray-900 dark:text-white">
+
+    <!-- Sidebar -->
+    <div class="bg-blue-900 text-white w-64 space-y-6 py-7 px-2 fixed inset-y-0 left-0">
+        <!-- Branding and logo -->
+        <div class="text-center">
+            <svg class="h-12 w-12 mx-auto" /* SVG code here */></svg>
+            <h2 class="text-3xl font-bold mt-2">SDBMS</h2>
+            <img class="h-16 w-16 rounded-full mx-auto mt-4" src="https://via.placeholder.com/64" alt="User profile picture">
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+            <a href="#" class="block py-2.5 px-4 rounded hover:bg-blue-700">Dashboard</a>
+            <a href="#" class="block py-2.5 px-4 rounded hover:bg-blue-700">Rooms</a>
+            <!-- More navigation items -->
+            <a href="#" class="block py-2.5 px-4 rounded hover:bg-blue-700">Logout</a>
+        </nav>
+    </div>
+
+    <!-- Content area -->
+    <div class="pl-64 flex flex-col min-h-screen">
+        <!-- Header -->
+        <header class="bg-gray-800 text-white py-4 px-4 flex justify-between items-center sticky top-0">
+            <h1 class="text-xl font-semibold">Faculty Interface</h1>
+            <div class="flex items-center">
+                <span class="mr-4">Hello, [User's Name]</span>
+                <select class="bg-gray-700 text-white rounded border border-gray-600 py-2 px-4">
+                    <option value="">Select Course</option>
+                    <!-- Populate with courses -->
+                </select>
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main class="flex-1 bg-gray-800 p-4">
+            <div class="container mx-auto py-6">
+                <input
+                    type="search"
+                    placeholder="Search students..."
+                    class="rounded-full pl-3 pr-10 py-2 border-2 border-gray-600 bg-gray-700 text-white mb-6"
+                />
+                
+                <!-- Grade and attendance table -->
+                <div class="overflow-x-auto">
+                    <table class="min-w-full leading-normal">
+                        <thead>
+                            <tr>
+                                <th class="px-5 py-3 border-b-2 border-gray-600 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                                    Student Name
+                                </th>
+                                <th class="px-5 py-3 border-b-2 border-gray-600 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                                    ID
+                                </th>
+                                <th class="px-5 py-3 border-b-2 border-gray-600 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                                    Grade
+                                </th>
+                                <th class="px-5 py-3 border-b-2 border-gray-600 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                                    Attendance
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-gray-700 hover:bg-gray-600">
+                                <td class="px-5 py-3 border-b border-gray-600 text-sm">
+                                    <div class="flex items-center">
+                                        <div class="ml-3">
+                                            <p class="text-white whitespace-no-wrap">John Doe</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-5 py-3 border-b border-gray-600 text-sm">
+                                    <p class="text-white whitespace-no-wrap">123456</p>
+                                </td>
+                                <td class="px-5 py-3 border-b border-gray-600 text-sm">
+                                    <input type="text" class="bg-gray-500 text-white rounded border border-gray-600 py-1 px-2" value="A" />
+                                </td>
+                                <td class="px-5 py-3 border-b border-gray-600 text-sm">
+                                    <input type="checkbox" class="form-checkbox rounded text-blue-600" checked />
+                                </td>
+                            </tr>
+                            <!-- More rows -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Save button -->
+                <div class="flex justify-end mt-4">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Save All Changes
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Interactive elements script
+    </script>
+</body>
+</html>

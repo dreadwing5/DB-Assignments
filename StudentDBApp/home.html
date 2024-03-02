@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SDBMS</title>
+    <!-- Include Tailwind CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="dark:bg-gray-900 dark:text-white">
+
+    <!-- Sidebar -->
+    <div class="bg-blue-900 text-white w-64 space-y-6 py-7 px-2 fixed inset-y-0 left-0">
+        <!-- Branding and logo -->
+        <div class="text-center">
+            <svg class="h-12 w-12 mx-auto" /* SVG code here */></svg>
+            <h2 class="text-3xl font-bold mt-2">SDBMS</h2>
+            <img class="h-16 w-16 rounded-full mx-auto mt-4" src="https://via.placeholder.com/64" alt="User profile picture">
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+            <a href="#" class="block py-2.5 px-4 rounded hover:bg-blue-700">Dashboard</a>
+            <a href="#" class="block py-2.5 px-4 rounded hover:bg-blue-700">Rooms</a>
+            <!-- More navigation items -->
+            <a href="#" class="block py-2.5 px-4 rounded hover:bg-blue-700">Logout</a>
+        </nav>
+    </div>
+
+    <!-- Content area -->
+    <div class="ml-64">
+        <!-- Header -->
+        <header class="bg-gray-800 text-white py-4 px-4 flex justify-between items-center">
+            <h1 class="text-xl font-semibold">Welcome, [User's Name]</h1>
+            <div class="flex items-center">
+                <input class="rounded-full pl-3 pr-10 py-2 border-2 border-gray-600 bg-gray-700 text-white" placeholder="Search..."/>
+                <button class="ml-4">
+                    <!-- Search icon -->
+                </button>
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main class="p-4 bg-gray-800 min-h-screen">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Example card -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow-lg text-white">
+                        <h4 class="font-semibold text-lg mb-2">Courses</h4>
+                        <p>You are currently enrolled in 8 courses.</p>
+                        <!-- Card content -->
+                    </div>
+                    <!-- More cards -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Interactive elements script
+    </script>
+</body>
+</html>
