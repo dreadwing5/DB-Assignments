@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Bill - EBMS</title>
+    <link href="./output.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+      .centered-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+  <body class="dark:bg-gray-900 dark:text-white">
+    <div class="centered-content">
+      <div class="w-full max-w-2xl mx-auto px-4 py-8">
+        <div class="mb-6">
+          <h2 class="text-xl font-bold text-white mb-4 text-center">
+            View Bill
+          </h2>
+          <div class="flex justify-between items-center">
+            <div>
+              <label for="month" class="block text-sm font-medium text-gray-200"
+                >Month:</label
+              >
+              <select
+                id="month"
+                name="month"
+                class="mt-1 block pl-3 pr-10 py-2 text-base rounded-md border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-white"
+              >
+                <!-- Options will be dynamically populated -->
+              </select>
+            </div>
+            <div>
+              <label for="year" class="block text-sm font-medium text-gray-200"
+                >Year:</label
+              >
+              <select
+                id="year"
+                name="year"
+                class="mt-1 block pl-3 pr-10 py-2 text-base rounded-md border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-white"
+              >
+                <!-- Options will be dynamically populated -->
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bill Details Table -->
+        <div
+          class="overflow-x-auto bg-white rounded-lg shadow dark:bg-gray-800"
+        >
+          <table
+            class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+          >
+            <thead
+              class="text-xs uppercase bg-gray-700 dark:bg-gray-700 text-gray-400"
+            >
+              <tr>
+                <th scope="col" class="px-6 py-3">Bill ID</th>
+                <th scope="col" class="px-6 py-3">Period</th>
+                <th scope="col" class="px-6 py-3">Units Used</th>
+                <th scope="col" class="px-6 py-3">Amount Due</th>
+                <th scope="col" class="px-6 py-3">Due Date</th>
+                <th scope="col" class="px-6 py-3">Status</th>
+              </tr>
+            </thead>
+            <tbody id="billDetails" class="bg-white dark:bg-gray-800">
+              <!-- Bill details rows will be populated here -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Buttons below the table -->
+        <div class="mt-4 flex justify-end space-x-2">
+          <button
+            id="downloadBill"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center"
+          >
+            Download
+            <i data-feather="download" class="ml-2"></i>
+          </button>
+
+          <a href="payment.html">
+            <button
+              id="payBill"
+              class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center"
+            >
+              Pay
+              <i data-feather="credit-card" class="ml-2"> </i></button
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        feather.replace(); // Replace all feather icons
+      });
+
+      const bills = [
+        {
+          billID: "001",
+          period: "Jan 2024",
+          unitsUsed: "150 kWh",
+          amountDue: "$100.00",
+          dueDate: "2024-01-30",
+          status: "Unpaid",
+        },
+        // Add more bill objects for demonstration
+      ];
+
+      function populateFilters() {
+        const months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        const monthSelect = document.getElementById("month");
+        const yearSelect = document.getElementById("year");
+        const currentYear = new Date().getFullYear();
+
+        months.forEach((month, index) => {
+          monthSelect.options[monthSelect.options.length] = new Option(
+            month,
+            index + 1
+          );
+        });
+
+        for (let i = currentYear - 10; i <= currentYear; i++) {
+          yearSelect.options[yearSelect.options.length] = new Option(i, i);
+        }
+      }
+
+      function populateBillDetails() {
+        const detailsTbody = document.getElementById("billDetails");
+        detailsTbody.innerHTML = ""; // Clear existing details
+
+        bills.forEach((bill) => {
+          const row = document.createElement("tr");
+          row.className =
+            "border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700";
+
+          row.innerHTML = `
+          <td class="px-6 py-4">${bill.billID}</td>
+          <td class="px-6 py-4">${bill.period}</td>
+          <td class="px-6 py-4">${bill.unitsUsed}</td>
+          <td class="px-6 py-4">${bill.amountDue}</td>
+          <td class="px-6 py-4">${bill.dueDate}</td>
+          <td class="px-6 py-4">${bill.status}</td>
+         
+        `;
+          detailsTbody.appendChild(row);
+        });
+      }
+
+      populateFilters();
+      populateBillDetails();
+    </script>
+  </body>
+</html>

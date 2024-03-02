@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raise Issue - Customer</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body class="dark:bg-gray-900 dark:text-white">
+    <div class="min-h-screen flex flex-col justify-center items-center px-6">
+      <div class="w-full max-w-md">
+        <h2 class="text-xl font-bold text-center text-white mb-6">
+          Raise an Issue
+        </h2>
+
+        <form class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+          <!-- Customer ID will be auto-generated, hence hidden or not needed in form -->
+          <div class="mb-6">
+            <label
+              for="issue-description"
+              class="block text-sm font-medium text-gray-200"
+              >Issue Description</label
+            >
+            <textarea
+              id="issue-description"
+              name="issue-description"
+              rows="4"
+              class="block w-full mt-1 text-sm rounded-md border-gray-300 dark:bg-gray-700 dark:text-white focus:border-indigo-500 focus:ring-indigo-500"
+              placeholder="Describe your issue here..."
+              required
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Submit Issue
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

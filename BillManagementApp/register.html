@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - EBMS</title>
+    <link href="./output.css" rel="stylesheet" />
+    <style>
+      .overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 8px;
+      }
+
+      .grid-2x2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      @media (max-width: 640px) {
+        .grid-2x2 {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="dark:bg-gray-900 dark:text-white flex items-center justify-center min-h-screen"
+  >
+    <div class="overlay max-w-lg w-full space-y-8">
+      <div class="text-center">
+        <h2 class="mt-6 text-3xl font-extrabold text-white">
+          Create your account
+        </h2>
+      </div>
+      <form class="mt-8 space-y-6" action="#" method="POST">
+        <div class="grid-2x2">
+          <!-- Primary Details -->
+          <div>
+            <label for="email-address" class="sr-only">Email address</label>
+            <input
+              id="email-address"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+              placeholder="Email address"
+            />
+          </div>
+          <div>
+            <label for="password" class="sr-only">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="new-password"
+              required
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+              placeholder="Password"
+            />
+          </div>
+          <div>
+            <label for="meter-no" class="sr-only">Meter Number</label>
+            <input
+              id="meter-no"
+              name="meter-no"
+              type="text"
+              required
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+              placeholder="Meter Number"
+            />
+          </div>
+
+          <!-- Additional Details -->
+          <div>
+            <label for="contact-number" class="sr-only">Contact Number</label>
+            <input
+              id="contact-number"
+              name="contact"
+              type="text"
+              required
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+              placeholder="Contact Number"
+            />
+          </div>
+          <div class="col-span-2">
+            <label for="address" class="sr-only">Address</label>
+            <input
+              id="address"
+              name="address"
+              type="text"
+              required
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+              placeholder="Address"
+            />
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+        >
+          Register
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
