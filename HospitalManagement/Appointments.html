@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule Appointment - Hospital Management System</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 dark:bg-gray-900 dark:text-white">
+    <div
+      class="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900"
+    >
+      <div
+        class="px-8 py-6 mt-4 text-left bg-white dark:bg-gray-800 shadow-lg max-w-lg"
+      >
+        <h3 class="text-2xl font-bold text-center">Schedule an Appointment</h3>
+        <form action="">
+          <div class="mt-4">
+            <div>
+              <label for="doctor" class="block">Select Doctor</label>
+              <select
+                id="doctor"
+                class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 ring-green-500"
+              >
+                <option>Dr. Smith - Cardiology</option>
+                <option>Dr. Johnson - Dermatology</option>
+                <option>Dr. Williams - General Surgery</option>
+                <!-- Add more options here -->
+              </select>
+            </div>
+            <div class="mt-4">
+              <label for="date" class="block">Date</label>
+              <input
+                type="date"
+                id="date"
+                class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 ring-green-500"
+              />
+            </div>
+            <div class="mt-4">
+              <label for="time" class="block">Time</label>
+              <input
+                type="time"
+                id="time"
+                class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 ring-green-500"
+              />
+            </div>
+            <div class="mt-4">
+              <label for="reason" class="block">Reason for Visit</label>
+              <textarea
+                id="reason"
+                placeholder="Brief description of the reason for your visit"
+                class="w-full h-20 px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 ring-green-500"
+              ></textarea>
+            </div>
+            <div class="flex items-baseline justify-between">
+              <button
+                class="px-6 py-2 mt-4 text-white bg-green-600 rounded-lg hover:bg-green-700"
+              >
+                Schedule
+              </button>
+              <a
+                href="#"
+                class="text-sm text-green-600 hover:underline dark:text-green-400"
+                >Cancel</a
+              >
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
